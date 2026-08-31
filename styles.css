@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@300;400;500;600&family=Work+Sans:wght@400;500&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #e9eff5;
+  --color-text: #1b2733;
+  --color-accent: #2f6bab;
+  --color-accent-2: #2f6bab;
+  --color-divider: color-mix(in srgb, #1b2733 14%, transparent);
+
+  --color-accent-100: #eef5fd;
+  --color-accent-200: #d3e5f7;
+  --color-accent-300: #a9c9e9;
+  --color-accent-400: #7bacd9;
+  --color-accent-500: #4c8bc6;
+  --color-accent-600: #2f6bab;
+  --color-accent-700: #1f5289;
+  --color-accent-800: #163c66;
+  --color-accent-900: #112b47;
+
+  --color-neutral-100: #f8fafc;
+  --color-neutral-200: #eaeef3;
+  --color-neutral-300: #d6dde4;
+  --color-neutral-400: #b8c1ca;
+  --color-neutral-500: #98a3ae;
+  --color-neutral-600: #78848f;
+  --color-neutral-700: #5b6672;
+  --color-neutral-800: #3c4753;
+  --color-neutral-900: #22303d;
+
+  --font-heading: "Cormorant Garamond", "Noto Serif JP", serif;
+  --font-heading-weight: 500;
+  --font-body: "Noto Serif JP", "Lora", serif;
+
+  --space-1: 4.6px;
+  --space-2: 9.2px;
+  --space-3: 13.8px;
+  --space-4: 18.4px;
+  --space-6: 27.6px;
+  --space-8: 36.8px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 7px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  text-wrap: pretty;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent-700); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--color-accent-600); }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+
+.hr { height: 1px; border: 0; margin: 0; background: var(--color-divider); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text);
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+  transition: background 0.2s ease;
+}
+.btn-primary { background: var(--color-accent-600); border: 1px solid var(--color-accent-400); color: #ffffff; }
+.btn-primary:hover { background: var(--color-accent-500); }
+.btn-block { width: 100%; }
+
+.field .input {
+  width: 100%; min-height: 44px; padding: 6px 12px; font: inherit;
+  font-size: 14px; color: var(--color-text);
+  background: #ffffff;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.field .input:focus-visible { border-color: var(--color-accent); outline: 2px solid var(--color-accent-200); outline-offset: 0; }
+
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-4); border-radius: var(--radius-md);
+  border: 1px solid var(--color-divider);
+}
+.card-kicker { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); margin: 0; }
+.card-title { font-family: var(--font-heading); font-size: 18px; line-height: 1.4; margin: 6px 0 0; }
+.card-body { margin: 8px 0 0; font-size: 14px; color: color-mix(in srgb, var(--color-text) 80%, transparent); }
+
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-divider); }
+.table th { font-size: 12px; letter-spacing: 0.08em; color: color-mix(in srgb, var(--color-text) 65%, transparent); }
+
+.plate { box-sizing: border-box; }
+
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] > summary .plus { transform: rotate(45deg); }
+
+.placeholder-photo {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; aspect-ratio: 3 / 2;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-divider);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  font-size: 12.5px; letter-spacing: 0.06em; text-align: center;
+  padding: var(--space-3);
+}
+
